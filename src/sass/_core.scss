@@ -1,0 +1,117 @@
+//--- resets and global styles ---
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+a{
+    all: initial;
+    box-sizing: border-box;
+}
+
+button{
+    all: initial;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+
+//--- variables ---
+
+$color-background-blue: #94C4FB;
+
+$color-font-dark: #314965;
+$color-font-light: #fff;
+$color-font-green: #CAFE37;
+
+
+
+//--- mixins ---
+
+@mixin testing-border-1{
+    border: 1px solid black;
+}
+
+@mixin testing-border-2{
+    border: 1px dashed black;
+}
+
+@mixin testing-border-3{
+    border: 1px dotted black;
+}
+
+@mixin box-shadow-default($color){
+    box-shadow: 1px 3px 6px $color;
+}
+
+@mixin box-shadow-glowing($color){
+    box-shadow: 0px 0px 5px $color;
+}
+
+@mixin box-shadow-inset($color){
+    box-shadow: 
+        3px 3px 6px $color inset;
+}
+
+@mixin flex-row-center{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;   
+    align-content: center;
+}
+
+@mixin flex-row-evenly{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;   
+    align-content: center;
+}
+
+@mixin flex-row-evenly-stretch{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+@mixin flex-row-single-stretch{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+@mixin flex-column-center{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;   
+    align-content: center;
+}
+
+@mixin flex-variable($direction, $wrap, $justy, $align, $align-content){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justy;
+    align-items: $align;
+    align-content: $align-content;
+}
+
+@mixin stack-10{
+    position: relative;
+    z-index: 10;
+}
