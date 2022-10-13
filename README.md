@@ -2,7 +2,7 @@
 
 ## About
 
-Eine Website die persönliche Informationen, eine Timline so wie einen Portfolio Bereich erhält.
+Eine Website die persönliche Informationen, eine Timline so wie einen Portfolio Bereich entält.
 
 
 
