@@ -46,11 +46,17 @@ button{
     cursor: pointer;
 }
 
+.hidden{
+    display: none;
+}
+
 
 
 //--- variables ---
 
 $color-background-blue: #94C4FB;
+
+$color-background-second: #B4D6FC;
 
 $color-main-triad-partner-1: #FCACA7;
 $color-main-triad-partner-2: #97CD9E;

@@ -1,0 +1,155 @@
+@import './core';
+@import './scrollbar';
+@import './common-subdoc-part';
+
+
+.about-me{
+    position: relative;
+
+    &_h2{
+        background-color: #fff;
+        display: inline-block;
+        padding: .5rem 3rem .5rem 1rem;
+        border-radius: 0 1rem 1rem 0;
+        font-weight: bold;
+        @include box-shadow-default(rgba(0,0,0,0.5));
+        font-size: 140%;
+    }
+
+    &_section-container{
+        @include flex-variable(row, wrap, flex-end, center, center);
+    }
+
+    &_section{
+        width: 70%;
+        position: relative;
+        @include flex-variable(column, nowrap, center, center, center);
+        padding: 1rem 0 3rem 0;
+        margin-bottom: 5rem;
+        min-height: 6rem;
+        background-color: $color-background-second;
+        // box-shadow: 0 0 20px rgba(252, 173, 167, 0.5);
+        box-shadow: 
+            0 0 20px rgba(252, 173, 167, 0.5),
+            3px 6px 6px rgba(0,0,0,0.5);
+
+        @media screen and (max-width: 1200px) {
+            width: 70%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            width: 90%;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            width: 98%;
+        }
+
+
+        & *{
+            position: relative;
+            z-index: 5;
+        }
+
+        &::before{
+            content: "";
+            display: block;
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: -1rem;
+            left: .5rem;
+            transform: rotate(-5deg);
+            // background-color: inherit;
+            background: url(../pics/polygon.png) center center / contain no-repeat;
+        }
+    }
+
+    &_h3{
+        align-self: flex-end;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: .5rem 1rem .5rem 3rem;
+        border-radius: 1rem 0rem 0rem 1rem;
+        @include box-shadow-default(rgba(0,0,0,0.25));
+        margin: 0;
+    }
+
+
+    &_quote{
+        // @include testing-border-3();
+
+        & blockquote{
+            // @include testing-border-3();
+            margin: 0;
+            font-style: italic;
+
+            &::before{
+                content: "\301E";
+            }
+
+            &::after{
+                content: "\301F";
+            }
+        }
+
+        & figcaption{
+            // @include testing-border-3();
+            text-align: right;
+            font-size: 90%;
+            padding-right: 2rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &_container-logos{
+        // @include testing-border-3();
+        width: 70%;
+        @include flex-variable(row, wrap, space-evenly, center, center);
+        margin-top: 2rem;
+
+        @media screen and (max-width: 1372px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 600px) {
+            width: 100%;
+        }
+    }
+
+    &_logo-card{
+        width: 4rem;
+        height: 4rem;
+        background-color: #fff;
+        @include flex-row-center();
+        @include box-shadow-default(rgba(0,0,0,0.25));
+
+        & img{
+            width: 3rem;
+            height: 3rem;
+            object-fit: contain;
+        }
+    }
+
+    &_container-einblicke-ul{
+        // @include testing-border-3();
+        margin-top: 2rem;
+        width: 100%;
+        @include flex-variable(row, nowrap, space-evenly, center, center);
+    }
+
+    &_interessen-ul{
+        // @include testing-border-3();
+        margin-top: 2rem;
+        list-style-type: disc;
+        list-style-position: outside;
+        padding: 1rem;
+        margin-left: .3rem;
+
+        & li{
+            margin-bottom: 1rem;
+            padding-left: .3rem;
+        }
+    }
+}

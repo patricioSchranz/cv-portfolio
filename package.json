@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "built-index": "sass ./src/sass/index.scss ./public/styles/index.css --style=compressed --watch"
+    "built-index": "sass ./src/sass/index.scss ./public/styles/index.css --style=compressed --watch",
+    "built-about-me": "sass ./src/sass/about-me.scss ./public/styles/about-me.css --style=compressed --watch",
+    "built-timeline": "sass ./src/sass/timeline.scss ./public/styles/timeline.css --style=compressed --watch",
+    "built-portfolio": "sass ./src/sass/portfolio.scss ./public/styles/portfolio.css --style=compressed --watch"
   },
   "author": "",
   "license": "ISC"

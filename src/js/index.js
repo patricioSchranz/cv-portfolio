@@ -18,6 +18,8 @@ let
     theYScroll
 
 scrollHelper.style.height = `${theRealHeight + 100}px`
+
+    window.innerWidth <= 1365 && (theWidthOfTheSlider = window.innerWidth)
   
 window.onscroll = () =>{
     theYScroll = window.scrollY
@@ -32,29 +34,32 @@ window.onscroll = () =>{
  
     naviSlider.style.left = `-${theYScroll}px`
 
+    console.log('the y scroll =>', theYScroll)
+    console.log('the width of the slider', theWidthOfTheSlider)
+
 
     if(scrollDifference > 0){
         if(theYScroll >= ((theWidthOfTheSlider/1.2) * 3)){
             scrollHelper.style.height = `${theRealHeight + (theWidthOfTheSlider*3)}px`
             console.log('c')
-            imageDiv.style.background = 'url(./pics/gallery.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/gallery.webp) center center / cover no-repeat'
             portfolioLink.style.animation = 'opacity-in 1s 2s forwards'
             scrollInfoArrow.innerHTML = '&#129045'
         }
         else if(theYScroll >= ((theWidthOfTheSlider/1.2) * 2)){
             console.log('c')
-            imageDiv.style.background = 'url(./pics/time.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/time.webp) center center / cover no-repeat'
             timelineLink.style.animation = 'opacity-in 1s 1s forwards'
         }
         else if(theYScroll >= (theWidthOfTheSlider / 1.5)){
-            imageDiv.style.background = 'url(./pics/me-small.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/as.jpg) center center / cover no-repeat'
             aboutMeLink.style.animation = 'opacity-in 1s forwards'
              scrollInfoArrow.innerHTML = '&#11109'
              console.log(scrollInfoArrow)
             console.log('b')
         }
         else if(theYScroll < theWidthOfTheSlider){
-            imageDiv.style.background = 'url(./pics/laptop.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/laptop.webp) center center / cover no-repeat'
             console.log('a')
         }
     }
@@ -62,20 +67,20 @@ window.onscroll = () =>{
     else if(scrollDifference < 0){
         if(theYScroll >= ((theWidthOfTheSlider / 1.2) * 3)){
             scrollHelper.style.height = `${theRealHeight + (theWidthOfTheSlider*3)}px`
-            imageDiv.style.background = 'url(./pics/gallery.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/gallery.webp) center center / cover no-repeat'
             console.log('d')
         }
         else if(theYScroll >= ((theWidthOfTheSlider /1.2) * 2)){
-            imageDiv.style.background = 'url(./pics/time.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/time.webp) center center / cover no-repeat'
             scrollInfoArrow.innerHTML = '&#11109'
             console.log('c')
         }
         else if(theYScroll >= (theWidthOfTheSlider / 1.2)){
-            imageDiv.style.background = 'url(./pics/me-small.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/as.jpg) center center / cover no-repeat'
             console.log('b')
         }
         else if(theYScroll < theWidthOfTheSlider){
-            imageDiv.style.background = 'url(./pics/laptop.webp) center center / cover no-repeat'
+            imageDiv.style.background = 'url(./public/pics/laptop.webp) center center / cover no-repeat'
             scrollInfoArrow.innerHTML = '&#129047'
             console.log('a')
         }
@@ -88,9 +93,13 @@ window.onscroll = () =>{
 }
 
 window.addEventListener('resize', ()=>{
+    // alert('resize')
     theRealHeight = window.innerHeight
     theWidthOfTheSlider = window.innerWidth * 0.58
     scrollHelper.style.height = `${theRealHeight + 100}px`
+
+    window.innerWidth <= 1365 && (theWidthOfTheSlider = window.innerWidth)
+    // location.reload()
 })
 
 
@@ -98,9 +107,9 @@ window.addEventListener('resize', ()=>{
 //--- preload images ---
 
 const preloadImageArray = [
-    "./pics/me-small.webp",
-    "./pics/time.webp",
-    "./pics/gallery.webp"
+    "./public/pics/me-small.webp",
+    "./public/pics/time.webp",
+    "./public/pics/gallery.webp"
 ]
 document.addEventListener('DOMContentLoaded', ()=>{
     for(let i = 0; i < preloadImageArray.length; i++){
