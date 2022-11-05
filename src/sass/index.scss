@@ -25,6 +25,7 @@
     border-radius: 50%;
     // animation: intro 1s 2.2s forwards, intro-2 3s forwards;
     animation: intro 2s forwards ease-in-out, intro-2 2s 0s 1;
+    // display: none;
 }
 
 
@@ -96,7 +97,7 @@
 
                     @media screen and (max-width: 1365px) {
                         width: 95%;
-                        height: 30%;
+                        height: 33%;
                         border-radius: 0;
                         transform: none !important;
                      }
@@ -314,12 +315,74 @@
 
                     @media screen and (max-width: 1365px) {
                         border: 1px solid rgba(0, 0, 0, 0.2);
-                        width: 95%;
-                        height: 90%;
-                        background-color: rgba(255, 255, 255, 0.1);
+                        width: 98%;
+                        height: 100%;
+                        background-color: rgba(255, 255, 255, .1);
                         text-align: center;
-                        @include flex-row-center();
-                        @include box-shadow-default(rgba(0, 0, 0, 0.4));
+                        // @include flex-row-center();
+                        @include box-shadow-default(rgba(0, 0, 0, 0.2));
+                        border-radius: 10rem;
+                        font-size: 150%;
+                        // @include font-heading-1();
+
+                        &::before{
+                            content: '';
+                            background-color: rgba(255, 255, 255, .8);
+                            // background-color: rgba(172, 255, 47, 0.6);
+                            
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            min-height: 10%;
+                            z-index: -1;
+                            @include box-shadow-default(#000);
+                        }
+
+                        &.first{
+                            &::after{
+                                content: '';
+                                background: url(../pics/as.jpg) center center / cover no-repeat;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 90%;
+                                z-index: -2;
+                               opacity: .1;
+                            //    filter: contrast(10);
+                            }
+                        }
+
+                        &.second{
+                            &::after{
+                                content: '';
+                                background: url(../pics/time.webp) center center / cover no-repeat;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 90%;
+                                z-index: -2;
+                               opacity: .1;
+                            //    filter: contrast(10);
+                            }
+                        }
+
+                        &.third{
+                            &::after{
+                                content: '';
+                                background: url(../pics/gallery.webp) center center / cover no-repeat;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 90%;
+                                z-index: -2;
+                               opacity: .1;
+                            //    filter: contrast(10);
+                            }
+                        }
                     }
 
                     & .fake-before{
@@ -364,6 +427,7 @@
     cursor: help;
     filter: drop-shadow(0 0 5px $color-main-triad-partner-2);
     animation: scroll-hint 0.5s infinite linear alternate, glowing 1s infinite alternate ease-in-out;
+    // z-index: 200;
 
 
     &:hover:after{
