@@ -95,10 +95,12 @@
                     transition: transform 0.3s, border-radius 0.6s;
 
                     @media screen and (max-width: 1365px) {
-                        width: 80%;
-                        height: 25%;
+                        width: 95%;
+                        height: 30%;
                         border-radius: 0;
+                        transform: none !important;
                      }
+
 
                 
                     &:hover{
@@ -309,6 +311,16 @@
                     // @include testing-border-3();
                     position: relative;
                     padding: 1rem 3rem;
+
+                    @media screen and (max-width: 1365px) {
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+                        width: 95%;
+                        height: 90%;
+                        background-color: rgba(255, 255, 255, 0.1);
+                        text-align: center;
+                        @include flex-row-center();
+                        @include box-shadow-default(rgba(0, 0, 0, 0.4));
+                    }
 
                     & .fake-before{
                         position: absolute;
